@@ -1,25 +1,79 @@
-permalink: /:year:month:day/:title
-url: #Your url here
-baseurl: /
+# Site settings 配置站点
+title: "Victor's Blog"
+description: '昵称悟空，千禧一代，前端开发者/伪极客/灵魂摄影师，热爱技术&设计。很高兴能在这里与你分享我对技术和生活的思考。'
+keyword: '周鑫, 周鑫的独立博客, 周鑫的博客, 前端, 前端开发, 前端博客, javascript, vuejs, nodejs, 设计'
+url: 'http://liaokeyu.com' # your host
 
-# variables
-name: Victor's Computer
-description: Talk is cheap, show me the code.
-google_verification: null
+# if you don't need baseurl, you should leave this value blank.
+baseurl: ''
 
+# Navigation links
+nav:
+  home: '/'
+  tags: '/tags.html'
 
-# File management
-include: [".htaccess"]
-exclude: ["README.md", "LICENSE"]
+# Footer
+footer:
+  since: 2015
 
-# Sass
-sass:
-  style: :compressed
-  sass_dir: _sass
+# Author 配置博主信息
+author: 'Victor'
+nickname: 'Father'
+bio: '全站打砸小能手 (๑•̀ㅂ•́)و✧'
+avatar: '/assets/img/profile.png'
+
+# Search
+search: true
+
+# Night mode
+nightMode: false
+
+# Comments 评论功能
+comments:
+  disqus: false
+  disqus_url: 'https://liaokeyu.disqus.com/embed.js'
+
+# MathJax 公式支持 by Ray-Eldath
+mathjax: true
+
+# Share
+social-share: true
+social-share-items: ['wechat', 'weibo', 'douban', 'twitter']
+
+# theme color 主题皮肤
+theme-color: 'black'  # pink or default
+
+# Post header background patterns (when the post no cover): circuitBoard, overlappingCircles, food, glamorous, ticTacToe, seaOfClouds
+postPatterns: 'circuitBoard'
+
+# SNS settings 配置社交网站
+# url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
+sns:
+  github: '//github.com/VictorChow'
+  juejin: '//juejin.im/user/56d9440df3609a005d8c5686'
+  weibo: '//weibo.com/u/3309381531'
+
+# Tags 设置标签
+recommend-tags: true # whether or not display recommend-tags on the sidebar
+recommend-condition-size: 12 # a tag will be recommended if the size of it is more than this value
+
+# Build settings
+paginate: 6
+paginate_path: 'page:num'
+exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'README.md']
 
 # Markdown
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
-  syntax_highlighter_opts:
-    disable : true
+
+# RSS
+RSS: false
+
+# Permalink
+# See: https://github.com/kaeyleo/jekyll-theme-H2O/issues/35
+permalink: /:year/:month/:day/:title.html
+
+# Plugins
+plugins: [jekyll-paginate]

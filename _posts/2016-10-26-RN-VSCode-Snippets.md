@@ -3,7 +3,7 @@ layout: post
 title: React Native Snippets
 date: 2016-12-15
 categories: code
-tags: React-Native
+tags: ReactNative VSCode
 ---
 
 > VS Code开发React Native时的Snippets
@@ -319,4 +319,6 @@ tags: React-Native
     }
 }
 ```
+
+
 

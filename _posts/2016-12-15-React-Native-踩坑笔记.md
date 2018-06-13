@@ -3,7 +3,7 @@ layout: post
 title: React Native 踩坑笔记
 date: 2016-12-15
 categories: code
-tags: React-Native
+tags: ReactNative
 ---
 
 > React Native开发中遇到的一些问题

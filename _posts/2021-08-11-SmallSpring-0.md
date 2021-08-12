@@ -4,6 +4,7 @@ title: 手撸 Spring 第 0 篇：序章
 date: 2021-08-11
 categories: code
 tags: Java Spring SpringBoot
+typora-root-url: ../../victorchow.github.io
 ---
 
 > 小傅哥《 Spring 手撸专栏》系列学习笔记

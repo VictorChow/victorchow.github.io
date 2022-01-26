@@ -6,6 +6,8 @@ categories: code
 tags: Lombok
 ---
 
+> 配合 lombok-intellij-plugin 简化业务代码
+
 ## Lombok
 
 1. `git clone https://github.com/projectlombok/lombok.git`

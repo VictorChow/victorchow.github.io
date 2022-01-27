@@ -3,7 +3,7 @@ layout: post
 title: Lombok 扩展自定义 @Log
 date: 2022-01-25
 categories: code
-tags: Lombok
+tags: Lombok IDEA
 ---
 
 > 配合 lombok-intellij-plugin 简化业务代码

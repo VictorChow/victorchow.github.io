@@ -180,6 +180,20 @@ tags: Lombok
     * LombokProcessorManager.java
     * plugin.xml
 
+11. build.gradle 中设置兼容版本
+
+    ```groovy
+    patchPluginXml {
+      version artifactVersion
+    
+      pluginDescription(file(descriptionFile).text)
+      changeNotes(file(changesFile).text)
+    
+      sinceBuild "211"  // 最低版本
+      untilBuild "299"  // 最高版本
+    }
+    ```
+
 11. 若执行`./gradlew build --info`成功，在 build/distributions 目录下找到编译好的插件
 
 12. 到 IDEA 安装目录下的 plugins 目录移除 lombok 文件夹，让 lombok 变为非内置

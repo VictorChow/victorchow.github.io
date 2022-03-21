@@ -483,7 +483,7 @@ a {
   margin: 0 auto; }
 
 .post-wrapper {
-  width: 720px; }
+  width: 900px; }
 
 .post-header {
   position: relative;
@@ -596,7 +596,7 @@ a {
   padding: 40px 0 80px; }
   .post-content .post-subtitle {
     position: relative;
-    width: 720px;
+    width: 900px;
     font-size: 18px;
     color: #a6a6a6;
     font-weight: normal;
@@ -620,7 +620,7 @@ a {
 
 .markdown-body {
   font-family: "Merriweather-Light", -apple-system, Verdana, "PingFang SC", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  width: 720px;
+  width: 900px;
   box-sizing: border-box;
   padding: 0 0 32px; }
   .markdown-body .highlight {
@@ -643,7 +643,7 @@ a {
 
 .post-footer-item {
   margin: 0 auto;
-  width: 720px; }
+  width: 900px; }
 
 .author-detail {
   position: relative;
@@ -653,7 +653,7 @@ a {
 
 .read-next {
   display: flex;
-  width: 720px;
+  width: 900px;
   margin: 60px auto; }
 
 .read-next-item {

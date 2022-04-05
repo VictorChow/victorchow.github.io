@@ -3,7 +3,7 @@ layout: post
 title: SlayTheSpire本地存档修改
 date: 2018-06-20
 categories: code
-tags: SlayTheSpire Vue
+tags: Cracked
 ---
 
 > 1000000000血怕不怕嗯？

@@ -52,7 +52,7 @@ sns:
   github: '//github.com/VictorChow'
   juejin: '//juejin.im/user/56d9440df3609a005d8c5686'
   zhihu: 'https://www.zhihu.com/people/zhou-xin-73-94-82'
-#  weibo: '//weibo.com/u/3309381531'
+  weibo: '//weibo.com/u/3309381531'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar

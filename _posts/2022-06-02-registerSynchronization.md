@@ -1,9 +1,9 @@
 ---
 layout: post
 title: TransactionSynchronizationManager
-date: 2024-08-02
+date: 2022-06-02
 categories: code
-tags: Java
+tags: Java Spring
 typora-root-url: ../../victorchow.github.io
 ---
 

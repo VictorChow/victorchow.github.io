@@ -89,23 +89,26 @@ Consumer: Awoken from wait.
 Consumer: Consuming data...
 ```
 
-## 代码解析
+### 工作原理
+1. **线程 A 获取锁**  
+   - 线程 A 调用 `lock.lock()`，成功获取锁，此时其他线程无法获取该锁，因为 ReentrantLock 是互斥的
 
-### consume 方法
+2. **线程 A 调用 `condition.await()`**  
+   - 在持有锁的情况下，线程 A 调用 `condition.await()`
+   - `await()` 的行为是 **原子性地释放锁**，并将线程 A 设置为等待状态
+   - 这意味着锁在 `await()` 调用时被释放，其他线程现在可以竞争获取这个锁
 
-- **获取锁**：通过 `lock.lock()` 确保线程安全
-- **检查条件**：使用 `while (!dataAvailable)` 循环检查数据是否可用
-- **等待数据**：若数据不可用，打印 `"Consumer: Waiting for data..."`，调用 `condition.await()` **释放锁**并等待
-- **被唤醒**：被 `signalAll()` 唤醒（需要重新获取锁），打印 `"Consumer: Awoken from wait."`
-- **消费数据**：打印 `"Consumer: Consuming data..."`，并将 `dataAvailable` 置为 `false`
-- **释放锁**：在 `finally` 块中调用 `lock.unlock()`
+3. **线程 B 获取锁**  
+   - 因为线程 A 释放了锁，线程 B 可以调用 `lock.lock()` 获取锁
+   - 获取锁后，线程 B 可以修改共享状态，然后调用 `condition.signal()` 或 `condition.signalAll()` 来唤醒等待的线程（例如线程 A）
 
-### produce 方法
+4. **线程 B 调用 `condition.signal()`**  
+   - 调用 `signal()` 会通知线程 A 从等待状态转为就绪状态，但线程 A **并不会立即执行**
+   - 线程 A 需要等待线程 B 释放锁，然后重新竞争获取锁，只有在成功重新获取锁后，线程 A 才会从 `await()` 返回并继续执行
 
-- **获取锁**：通过 `lock.lock()` 确保线程安全
-- **生产数据**：打印日志 `"Producer: Producing data..."`，并将 `dataAvailable` 置为 `true`。
-- **唤醒消费者**：调用 `condition.signalAll()` 唤醒所有等待的线程（真正尝试唤醒是在 unlock 之后），并打印 `"Producer: Data produced and signaled."`
-- **释放锁**：在 `finally` 块中调用 `lock.unlock()`
+5. **线程 B 释放锁，线程 A 恢复**  
+   - 线程 B 在完成操作后调用 `lock.unlock()` 释放锁
+   - 线程 A 重新获取锁，然后从 `await()` 开始，继续执行后续代码
 
 ## 注意
 
